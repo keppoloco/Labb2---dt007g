@@ -5,6 +5,7 @@
  */
 package labb2;
 import javax.swing.*;
+import labb2.windows.GUIWindow;
 /**
  *
  * @author Tiimm
@@ -12,7 +13,7 @@ import javax.swing.*;
 public class main extends JFrame {
 
     public static void main(String[] args) {
-        mainWindow w = new mainWindow();
+        new GUIWindow().start();
     }
     
 }
