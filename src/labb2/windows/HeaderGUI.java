@@ -5,6 +5,8 @@
  */
 package labb2.windows;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -43,6 +45,21 @@ public class HeaderGUI extends JMenuBar {
         // Add buttons to header
         this.add(fileMenu);
         this.add(showMenu);
+        
+        // Add action listeners to chat radio buttons
+        publicButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Public chat selected.");
+            }
+        });
+        
+        privateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Private chat selected.");
+            }
+        });
     }
     
     private JMenu fileMenu;

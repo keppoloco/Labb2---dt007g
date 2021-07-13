@@ -25,8 +25,7 @@ public class GUIWindow extends JFrame {
         
         // Fetch header gui
         this.setJMenuBar(new HeaderGUI());
-
-        
+       
     }
 
     public void start() {
