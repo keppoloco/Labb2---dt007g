@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labb2.windows;
+package labb2.window;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -17,8 +18,8 @@ import javax.swing.JRadioButtonMenuItem;
  *
  * @author Tiimm
  */
-public class HeaderGUI extends JMenuBar {
-    public HeaderGUI() {
+public class HeaderPanel extends JMenuBar {
+    public HeaderPanel() {
         
         // Create JMenu objects for buttons
         fileMenu = new JMenu("File");
@@ -58,6 +59,14 @@ public class HeaderGUI extends JMenuBar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Private chat selected.");
+            }
+        });
+        
+        exitItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Exiting application.");
+                System.exit(0);
             }
         });
     }

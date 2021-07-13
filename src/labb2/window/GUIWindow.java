@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labb2.windows;
+package labb2.window;
 
 import javax.swing.JFrame;
 
@@ -24,12 +24,11 @@ public class GUIWindow extends JFrame {
         this.setSize(WIDTH, HEIGHT);
         
         // Fetch header gui
-        this.setJMenuBar(new HeaderGUI());
+        this.setJMenuBar(new HeaderPanel());
        
     }
 
     public void start() {
-        // Make GUI visible
         this.setVisible(true);
     }
 
