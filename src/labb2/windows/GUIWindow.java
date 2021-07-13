@@ -22,7 +22,11 @@ public class GUIWindow extends JFrame {
 
         // Set default size on GUI
         this.setSize(WIDTH, HEIGHT);
+        
+        // Fetch header gui
+        this.setJMenuBar(new HeaderGUI());
 
+        
     }
 
     public void start() {
