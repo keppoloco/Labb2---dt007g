@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package labb2;
-import java.util.Map;
-import java.util.TreeMap;
 import javax.swing.*;
-import javax.swing.RowFilter.Entry;
 import labb2.window.GUIWindow;
 /**
  *

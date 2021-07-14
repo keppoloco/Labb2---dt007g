@@ -33,9 +33,11 @@ public class FriendReader {
         file = new File(System.getProperty("user.dir")+path);
         System.out.println(file);
         
+        readFriendList();
+        
     }
     
-    public void readFriendList() {
+    private void readFriendList() {
         // Pattern to search
         Pattern p = Pattern.compile("<(.*?)>");
         

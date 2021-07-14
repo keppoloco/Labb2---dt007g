@@ -5,6 +5,9 @@
  */
 package labb2.window;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
 import javax.swing.JFrame;
 
 /**
@@ -16,6 +19,9 @@ public class GUIWindow extends JFrame {
     public GUIWindow() {
         // Add title to GUI
         this.setTitle("Chatbox");
+        
+        // Set background color
+        this.setBackground(Color.LIGHT_GRAY);
 
         // Default exit option whenever GUI is closed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,6 +31,12 @@ public class GUIWindow extends JFrame {
         
         // Fetch header gui
         this.setJMenuBar(new HeaderPanel());
+        
+        // add Friend panel
+        this.add(new FriendPanel(), BorderLayout.EAST);
+        
+        // add chat panel
+        this.add(new ChatPanel(), BorderLayout.WEST);
        
     }
 

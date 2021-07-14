@@ -69,6 +69,9 @@ public class HeaderPanel extends JMenuBar {
                 System.exit(0);
             }
         });
+        
+        // Default mode public chat
+        publicButton.setSelected(true);
     }
     
     private JMenu fileMenu;
