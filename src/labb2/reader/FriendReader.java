@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labb2;
+package labb2.reader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,6 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import labb2.Model.Friend;
+import labb2.Panel.FriendPanel;
 
 /**
  *
@@ -60,7 +62,7 @@ public class FriendReader {
             scanner.close();
             
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(FriendsPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FriendPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

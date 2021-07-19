@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labb2.window;
+package labb2.Panel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
+import labb2.reader.ChatReader;
 
 /**
  *
@@ -52,6 +52,7 @@ public class HeaderPanel extends JMenuBar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Public chat selected.");
+                new ChatReader().getLog();
             }
         });
         
@@ -72,6 +73,10 @@ public class HeaderPanel extends JMenuBar {
         
         // Default mode public chat
         publicButton.setSelected(true);
+    }
+    
+    public Boolean isPublicButtonSelected() {
+        return publicButton.isSelected();
     }
     
     private JMenu fileMenu;

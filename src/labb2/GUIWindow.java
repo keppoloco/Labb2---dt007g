@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labb2.window;
+package labb2;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import javax.swing.JFrame;
+import labb2.Panel.ChatPanel;
+import labb2.Panel.FriendPanel;
+import labb2.Panel.HeaderPanel;
 
 /**
  *
@@ -19,32 +21,35 @@ public class GUIWindow extends JFrame {
     public GUIWindow() {
         // Add title to GUI
         this.setTitle("Chatbox");
-        
+
         // Set background color
         this.setBackground(Color.LIGHT_GRAY);
 
         // Default exit option whenever GUI is closed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Set default size on GUI
-        this.setSize(WIDTH, HEIGHT);
-        
-        // Fetch header gui
-        this.setJMenuBar(new HeaderPanel());
-        
-        // add Friend panel
-        this.add(new FriendPanel(), BorderLayout.EAST);
-        
+        // add head panel
+        headPanel = new HeaderPanel();
+        this.setJMenuBar(headPanel);
+
         // add chat panel
-        this.add(new ChatPanel(), BorderLayout.WEST);
-       
+        chatPanel = new ChatPanel();
+        this.add(chatPanel, BorderLayout.WEST);
+
+        // add Friend panel
+        friendPanel = new FriendPanel(headPanel, chatPanel);
+        this.add(friendPanel, BorderLayout.EAST);
+
+        this.pack();
+
     }
 
     public void start() {
         this.setVisible(true);
     }
 
-    private final int WIDTH = 400;
-    private final int HEIGHT = 400;
+    private HeaderPanel headPanel;
+    private ChatPanel chatPanel;
+    private FriendPanel friendPanel;
 
 }
