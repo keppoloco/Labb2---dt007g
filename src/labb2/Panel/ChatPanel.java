@@ -40,7 +40,7 @@ public class ChatPanel extends JPanel {
         this.setBorder(BorderFactory.createLineBorder(Color.black));
 
         this.setBorder(new EmptyBorder(15, 15, 15, 15));
-        
+
         cr = new ChatReader();
 
         chatContent = new JTextArea(cr.getLog());
@@ -53,16 +53,16 @@ public class ChatPanel extends JPanel {
 
         chatPanel.add(chatScroll);
         this.add(chatPanel);
-        
+
     }
-    
-    void setChatContent(String chatBuffer) {
+
+    public void setChatContent(String chatBuffer) {
         chatContent.setText(chatBuffer);
     }
 
     private JLabel chatTextLabel;
     private JPanel chatPanel;
     private JTextArea chatContent;
-    
+
     private ChatReader cr;
 }

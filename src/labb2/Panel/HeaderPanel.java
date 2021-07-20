@@ -48,14 +48,15 @@ public class HeaderPanel extends JMenuBar {
         this.add(showMenu);
         
         // Add action listeners to chat radio buttons
-        publicButton.addActionListener(new ActionListener() {
+       /* publicButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Public chat selected.");
-                new ChatReader().getLog();
+                String chat = new ChatReader().getLog();
+                repaint();
             }
         });
-        
+        */
         privateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -77,6 +78,14 @@ public class HeaderPanel extends JMenuBar {
     
     public Boolean isPublicButtonSelected() {
         return publicButton.isSelected();
+    }
+    
+    public JRadioButtonMenuItem getPublicButton() {
+        return publicButton;
+    }
+    
+    public JRadioButtonMenuItem getPrivateButton() {
+        return privateButton;
     }
     
     private JMenu fileMenu;

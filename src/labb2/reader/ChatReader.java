@@ -46,7 +46,7 @@ public class ChatReader {
         try {
 
             file = new File(System.getProperty("user.dir") + path + user + ".log");
-            System.out.println(file);
+            //System.out.println(file);
 
             scanner = new Scanner(file);
             System.out.println(file);

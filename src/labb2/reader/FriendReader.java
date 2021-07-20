@@ -33,7 +33,7 @@ public class FriendReader {
         
         // Instantiate path for reading friendlist
         file = new File(System.getProperty("user.dir")+path);
-        System.out.println(file);
+        //System.out.println(file);
         
         readFriendList();
         

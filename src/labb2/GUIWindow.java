@@ -7,10 +7,14 @@ package labb2;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JRadioButtonMenuItem;
 import labb2.Panel.ChatPanel;
 import labb2.Panel.FriendPanel;
 import labb2.Panel.HeaderPanel;
+import labb2.reader.ChatReader;
 
 /**
  *
@@ -31,6 +35,8 @@ public class GUIWindow extends JFrame {
         // add head panel
         headPanel = new HeaderPanel();
         this.setJMenuBar(headPanel);
+        
+        publicButton = headPanel.getPublicButton();
 
         // add chat panel
         chatPanel = new ChatPanel();
@@ -39,6 +45,15 @@ public class GUIWindow extends JFrame {
         // add Friend panel
         friendPanel = new FriendPanel(headPanel, chatPanel);
         this.add(friendPanel, BorderLayout.EAST);
+        
+        publicButton.addActionListener((ActionEvent e) -> {
+            System.out.println("Public chat selected.");
+            
+            String chat = new ChatReader().getLog();
+            chatPanel.setChatContent(chat);
+                    
+            repaint();
+        });
 
         this.pack();
 
@@ -51,5 +66,8 @@ public class GUIWindow extends JFrame {
     private HeaderPanel headPanel;
     private ChatPanel chatPanel;
     private FriendPanel friendPanel;
+    
+    private JRadioButtonMenuItem privateButton;
+    private JRadioButtonMenuItem publicButton;
 
 }
