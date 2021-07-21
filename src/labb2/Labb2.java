@@ -9,7 +9,7 @@ import javax.swing.*;
  *
  * @author Tiimm
  */
-public class Labb3 {
+public class Labb2 {
     public static void main(String[] args) {
         new GUIWindow().start();
     }
